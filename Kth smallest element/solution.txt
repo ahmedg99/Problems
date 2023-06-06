@@ -1,0 +1,16 @@
+class Solution {
+    public static int kthSmallest(int[] arr, int l, int r, int k) {
+        int[] arr2 = trierTableau(arr);
+
+        // Add your logic here to find the kth smallest element
+        return arr2[k-1];
+    }
+    public static int[] trierTableau(int[] arr) {
+        int[] arr2 = Arrays.copyOf(arr, arr.length);
+        Arrays.sort(arr2);
+        return arr2;
+    }
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
