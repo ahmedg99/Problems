@@ -1,0 +1,17 @@
+class Solution {
+    int missingNumber(int array[], int n) {
+        boolean[] visited = new boolean[n + 1]; // Create a boolean array to keep track of visited numbers
+
+        for (int i = 0; i < n - 1; i++) {
+            visited[array[i]] = true; // Mark visited numbers in the array
+        }
+
+        for (int i = 1; i <= n; i++) {
+            if (!visited[i]) {
+                return i; // Return the first non-visited number, which is the missing element
+            }
+        }
+
+        return -1; // Return -1 if no missing element is found
+    }
+}
